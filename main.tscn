@@ -1,0 +1,306 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxm48uvex6lw7"]
+
+[ext_resource type="Theme" uid="uid://c74uiqa2l8eog" path="res://main_theme.tres" id="1_i6383"]
+[ext_resource type="Script" path="res://main.gd" id="2_feux6"]
+[ext_resource type="Texture2D" uid="uid://4wrfudojskma" path="res://Assets/brasil/all.svg" id="2_lgmcc"]
+[ext_resource type="Texture2D" uid="uid://ft5ddttxxrrj" path="res://Assets/brasil/nort.svg" id="3_rx1rt"]
+[ext_resource type="Texture2D" uid="uid://c3uul3t76ysbk" path="res://Assets/brasil/norteast.svg" id="4_4gul0"]
+[ext_resource type="Texture2D" uid="uid://byudbeo6h0mfy" path="res://Assets/brasil/center.svg" id="5_anwbn"]
+[ext_resource type="Texture2D" uid="uid://4dj1rbqlkwai" path="res://Assets/brasil/souteast.svg" id="6_56nsi"]
+[ext_resource type="Texture2D" uid="uid://ldnf0245byea" path="res://Assets/brasil/south.svg" id="7_faw54"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5png8"]
+bg_color = Color(0.607843, 0.854902, 0.996078, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i6383")
+script = ExtResource("2_feux6")
+highlight_color = Color(1, 1, 0, 1)
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i6383")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="BG/HBoxContainer"]
+custom_minimum_size = Vector2(640, 640)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Map_Area" type="Panel" parent="BG/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5png8")
+
+[node name="Mapa" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+visible = false
+modulate = Color(0.329412, 1, 0.552941, 1)
+layout_mode = 2
+anchor_left = 0.0419355
+anchor_top = 0.0843949
+anchor_right = 0.934839
+anchor_bottom = 0.936624
+offset_right = 138.4
+offset_bottom = 133.8
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_lgmcc")
+
+[node name="Norte" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0403226
+anchor_top = 0.0828026
+anchor_right = 0.688065
+anchor_bottom = 0.515924
+offset_right = 100.4
+offset_bottom = 68.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_rx1rt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Nordeste" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+layout_mode = 0
+anchor_left = 0.630645
+anchor_top = 0.22293
+anchor_right = 0.933871
+anchor_bottom = 0.598726
+offset_right = 47.0
+offset_bottom = 59.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_4gul0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Centro" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+layout_mode = 0
+anchor_left = 0.333871
+anchor_top = 0.363057
+anchor_right = 0.687419
+anchor_bottom = 0.75414
+offset_right = 54.8
+offset_bottom = 61.4
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_anwbn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sudeste" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+layout_mode = 0
+anchor_left = 0.540322
+anchor_top = 0.522293
+anchor_right = 0.846129
+anchor_bottom = 0.774522
+offset_right = 47.4
+offset_bottom = 39.6
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_56nsi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sul" type="TextureRect" parent="BG/HBoxContainer/MarginContainer2/Map_Area"]
+layout_mode = 0
+anchor_left = 0.425806
+anchor_top = 0.68949
+anchor_right = 0.630968
+anchor_bottom = 0.934076
+offset_right = 31.8
+offset_bottom = 38.4
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_faw54")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/HBoxContainer"]
+custom_minimum_size = Vector2(500, 640)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TabContainer" type="TabContainer" parent="BG/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Region" type="TabBar" parent="BG/HBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="MarginContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Choose the region"
+horizontal_alignment = 1
+
+[node name="Botao_Norte" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Norte
+"
+
+[node name="Botao_Nordeste" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nordeste"
+
+[node name="Botao_Centro" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Centro-Oeste"
+
+[node name="Botao_Sudeste" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sudeste"
+
+[node name="Botao_Sul" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sul"
+
+[node name="Parâmetros" type="TabBar" parent="BG/HBoxContainer/MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer"]
+layout_mode = 2
+
+[node name="Instalacao" type="HBoxContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Instalacao"]
+layout_mode = 2
+text = "Instalation: "
+
+[node name="OptionButton" type="OptionButton" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Instalacao"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Power-Plant"
+popup/item_0/id = 0
+popup/item_1/text = "Cyclotron"
+popup/item_1/id = 1
+popup/item_2/text = "Reactor"
+popup/item_2/id = 2
+
+[node name="Isotopo" type="HBoxContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Isotopo"]
+layout_mode = 2
+text = "Isotope: "
+
+[node name="Isotope" type="OptionButton" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Isotopo"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Isotope 1"
+popup/item_0/id = 0
+popup/item_1/text = "Isotope 2"
+popup/item_1/id = 1
+
+[node name="Ano" type="HBoxContainer" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Ano" type="Label" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Ano"]
+layout_mode = 2
+text = "Year: "
+
+[node name="OptionButton" type="LineEdit" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Ano"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+placeholder_text = "Digite o ano"
+
+[node name="Button" type="Button" parent="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Calculate"
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(300, 300)
+visible = false
+wrap_controls = true
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.294118, 0.215686, 1, 1)
+
+[node name="Label" type="Label" parent="Window/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AAAAAAAAAAAAAAAAAAAAAAA"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer/Botao_Norte" to="." method="_on_botao_norte_pressed"]
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer/Botao_Nordeste" to="." method="_on_botao_nordeste_pressed"]
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer/Botao_Centro" to="." method="_on_botao_centro_pressed"]
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer/Botao_Sudeste" to="." method="_on_botao_sudeste_pressed"]
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Region/CenterContainer/VBoxContainer/Botao_Sul" to="." method="_on_botao_sul_pressed"]
+[connection signal="item_selected" from="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Instalacao/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Isotopo/Isotope" to="." method="_on_isotope_item_selected"]
+[connection signal="pressed" from="BG/HBoxContainer/MarginContainer/TabContainer/Parâmetros/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

@@ -1,0 +1,103 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c74uiqa2l8eog"]
+
+[ext_resource type="StyleBox" uid="uid://dtq4th7bukxms" path="res://save_focus.tres" id="1_4pd3e"]
+[ext_resource type="Texture2D" uid="uid://r1naledn3c63" path="res://Assets/kenney_ui-pack/PNG/blue_panel.png" id="1_pfapq"]
+[ext_resource type="Texture2D" uid="uid://gdaq05cb072u" path="res://Assets/kenney_ui-pack/PNG/blue_button06.png" id="2_m084j"]
+[ext_resource type="Texture2D" uid="uid://dfwmqq4od7sfl" path="res://Assets/kenney_ui-pack/PNG/blue_button02.png" id="3_xmgnu"]
+
+[sub_resource type="FontFile" id="FontFile_fw8gq"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tdh4"]
+texture = ExtResource("2_m084j")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhsdq"]
+texture = ExtResource("3_xmgnu")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jcc5"]
+texture = ExtResource("1_pfapq")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp875"]
+bg_color = Color(0.458824, 0.839216, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hebks"]
+bg_color = Color(0.458824, 0.839216, 1, 1)
+
+[resource]
+default_font = SubResource("FontFile_fw8gq")
+Button/colors/font_color = Color(0.117188, 0.652344, 0.878906, 1)
+Button/colors/font_focus_color = Color(0.167969, 0.210938, 0.265625, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = SubResource("FontFile_fw8gq")
+Button/styles/focus = ExtResource("1_4pd3e")
+Button/styles/hover = ExtResource("1_4pd3e")
+Button/styles/normal = SubResource("StyleBoxTexture_1tdh4")
+Button/styles/pressed = SubResource("StyleBoxTexture_hhsdq")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_8jcc5")
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_vp875")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_hebks")
